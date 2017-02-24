@@ -87,6 +87,7 @@ const WorkStyles = StyleSheet.create({
   },
   li:{
     width:Dimensions.get('window').width/4,
+    height:Dimensions.get('window').width/4,
     alignItems:'center',
     justifyContent:'center',
     borderRightWidth: 1,
@@ -94,8 +95,8 @@ const WorkStyles = StyleSheet.create({
     borderColor: '#eaeaea',
   },
   cellImg:{
-    height: 80,
-    width: 80,
+    height: 60,
+    width: 60,
   },
   cellTxt:{
     fontSize: 16,
