@@ -13,7 +13,7 @@ import {
     TouchableOpacity,
     ToastAndroid,
 }from 'react-native';
-import Main from '../pages/Main';
+import Login from '../pages/Login';
 
 export default class Welcome2 extends Component {
     constructor(props) {
@@ -34,8 +34,8 @@ export default class Welcome2 extends Component {
         const { navigator} = this.props;
         if (navigator) {
             navigator.push({
-                name:'Main',
-                component:Main,
+                name:'Login',
+                component:Login,
             })
         }
     }

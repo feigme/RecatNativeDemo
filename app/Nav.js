@@ -6,7 +6,6 @@ import {
   View,
   Navigator
 } from 'react-native';
-// import Login from './pages/Login';
 import Welcome2 from './pages/Welcome2';
 
 export default class Nav extends Component {

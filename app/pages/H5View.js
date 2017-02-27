@@ -3,7 +3,10 @@ import {Text, View, Image, StyleSheet,Dimensions,TouchableOpacity,WebView } from
 
 export default class H5View extends Component {
   constructor(props) {
-      super(props)
+      super(props);
+      this.state = {
+        url: this.props.url
+      }
   }
 
   _back(){
@@ -28,7 +31,7 @@ export default class H5View extends Component {
           style={{
             height: 200,
           }}
-          source={{uri: 'https://m.baidu.com/'}}
+          source={{uri:this.state.url}}
         />
       </View>
 

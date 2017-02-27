@@ -4,15 +4,18 @@ import H5View from '../pages/H5View';
 
 export default class Work extends Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
 
-    _onPressCell(){
+    _onPressCell(url){
         const { navigator} = this.props;
         if (navigator) {
             navigator.push({
                 name:'H5View',
                 component:H5View,
+                params: {
+                    url: url
+                }
             })
         }
     }
@@ -62,16 +65,18 @@ export default class Work extends Component {
                 <Image source={{uri: 'http://img001.meitianhui.com/public/images/f6/79/f1/42b553a1a6c3de3c99ca5e9721ed40a5f41658fd.png'}} style={WorkStyles.cellImg}/>
                 <Text style={WorkStyles.cellTxt}>客户</Text>
               </View>
-              <TouchableOpacity onPress={this._onPressCell.bind(this)}>
+              <TouchableOpacity onPress={this._onPressCell.bind(this, 'http://yige.huigujia.cn/yige/wap/task/list')}>
               <View style={WorkStyles.li}>
                 <Image source={{uri: 'http://img001.meitianhui.com/public/images/c7/b4/a2/d487b711a625384fd80a1c968ce05b9b6d7f9a97.png'}} style={WorkStyles.cellImg}/>
                 <Text style={WorkStyles.cellTxt}>任务</Text>
               </View>
               </TouchableOpacity>
-              <View style={WorkStyles.li}>
-                <Image source={{uri: 'http://img001.meitianhui.com/public/images/27/3c/4b/28de461b9880bbe6e761436ce62f0050b762fb22.png'}} style={WorkStyles.cellImg}/>
-                <Text style={WorkStyles.cellTxt}>拜访</Text>
-              </View>
+              <TouchableOpacity onPress={this._onPressCell.bind(this,'http://yige.huigujia.cn/yige/wap/visit/schedule/list')}>
+                <View style={WorkStyles.li}>
+                  <Image source={{uri: 'http://img001.meitianhui.com/public/images/27/3c/4b/28de461b9880bbe6e761436ce62f0050b762fb22.png'}} style={WorkStyles.cellImg}/>
+                  <Text style={WorkStyles.cellTxt}>拜访</Text>
+                </View>
+              </TouchableOpacity>
               <View style={WorkStyles.li}/>
             </View>
           </View>
