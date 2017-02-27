@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
-import { AppRegistry, Navigator, Text, View, Image, StyleSheet,Dimensions } from 'react-native';
+import { AppRegistry, Navigator, Text, View, Image, StyleSheet,Dimensions,TouchableOpacity } from 'react-native';
+import MyScene from '../pages/MyScene';
 
 export default class Work extends Component {
   constructor(props) {
         super(props)
     }
+
+    _onPressCell(){
+        const { navigator} = this.props;
+        if (navigator) {
+            navigator.push({
+                name:'MyScene',
+                component:MyScene,
+            })
+        }
+    }
+
 
   render() {
     return (
@@ -39,6 +51,27 @@ export default class Work extends Component {
               </View>
               <View style={WorkStyles.li}/>
               <View style={WorkStyles.li}/>
+              <View style={WorkStyles.li}/>
+            </View>
+          </View>
+
+          <View style={WorkStyles.box}>
+            <Text style={WorkStyles.boxTitle}>工作管理</Text>
+            <View style={WorkStyles.ol}>
+              <View style={WorkStyles.li}>
+                <Image source={{uri: 'http://img001.meitianhui.com/public/images/f6/79/f1/42b553a1a6c3de3c99ca5e9721ed40a5f41658fd.png'}} style={WorkStyles.cellImg}/>
+                <Text style={WorkStyles.cellTxt}>客户</Text>
+              </View>
+              <TouchableOpacity onPress={this._onPressCell.bind(this)}>
+              <View style={WorkStyles.li}>
+                <Image source={{uri: 'http://img001.meitianhui.com/public/images/c7/b4/a2/d487b711a625384fd80a1c968ce05b9b6d7f9a97.png'}} style={WorkStyles.cellImg}/>
+                <Text style={WorkStyles.cellTxt}>任务</Text>
+              </View>
+              </TouchableOpacity>
+              <View style={WorkStyles.li}>
+                <Image source={{uri: 'http://img001.meitianhui.com/public/images/27/3c/4b/28de461b9880bbe6e761436ce62f0050b762fb22.png'}} style={WorkStyles.cellImg}/>
+                <Text style={WorkStyles.cellTxt}>拜访</Text>
+              </View>
               <View style={WorkStyles.li}/>
             </View>
           </View>
