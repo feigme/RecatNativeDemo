@@ -6,11 +6,12 @@ import Work from '../pages/Work';
 
 export default class Main extends Component {
   constructor(props) {
-        super(props)
-        this.state = {
-            selectedTab: 'work'
-        }
+    super(props)
+    this.state = {
+        selectedTab: 'work'
     }
+  }
+
   render() {
     return (
       <TabNavigator>
@@ -21,7 +22,7 @@ export default class Main extends Component {
           renderSelectedIcon={() => <Image source={require('../images/ic_tab_strip_icon_category_selected.png')} style={MainPageStyle.tab_icon}/>}
           // badgeText="1"
           onPress={() => this.setState({ selectedTab: 'work' })}>
-          <Work/>
+          <Work navigator = {this.props.navigator}/>
         </TabNavigator.Item>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'concat'}

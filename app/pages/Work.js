@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { AppRegistry, Navigator, Text, View, Image, StyleSheet,Dimensions,TouchableOpacity } from 'react-native';
-import MyScene from '../pages/MyScene';
+import H5View from '../pages/H5View';
 
 export default class Work extends Component {
-  constructor(props) {
+    constructor(props) {
         super(props)
     }
 
@@ -11,8 +11,8 @@ export default class Work extends Component {
         const { navigator} = this.props;
         if (navigator) {
             navigator.push({
-                name:'MyScene',
-                component:MyScene,
+                name:'H5View',
+                component:H5View,
             })
         }
     }

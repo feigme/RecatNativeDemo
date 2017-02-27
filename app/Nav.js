@@ -7,7 +7,7 @@ import {
   Navigator
 } from 'react-native';
 // import Login from './pages/Login';
-import Work from './pages/Work';
+import Welcome2 from './pages/Welcome2';
 
 export default class Nav extends Component {
    constructor(props) {
@@ -15,7 +15,7 @@ export default class Nav extends Component {
    }
    render() {
     let defaultName = 'Main';
-    let defaultComponent = Work;
+    let defaultComponent = Welcome2;
     return (
       <Navigator
         initialRoute = {{name : defaultName , component: defaultComponent}}
